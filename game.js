@@ -1,4 +1,5 @@
 
+
 console.log("Welcome")
 let turn = "X"
 let end = false;
@@ -36,10 +37,10 @@ Array.from(boxes).forEach(element =>{
     let text = element.querySelector('.text');
     element.addEventListener('click', ()=>{
         if(text.innerText === ''){
-            text.innerText = turn;
-            turn = change();
-            win();
             if (!end){
+                text.innerText = turn;
+                turn = change();
+                win();
                 document.getElementsByClassName("information")[0].innerText  = "Turn for " + turn;
             } 
         }
@@ -57,4 +58,3 @@ reset.addEventListener('click', ()=>{
     document.getElementsByClassName("information")[0].innerText  = "Turn for " + turn;
     document.querySelector('.img1').getElementsByTagName('img')[0].style.width = "0px"
 })
-
